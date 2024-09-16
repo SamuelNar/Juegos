@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "juegos": "file:",
     "react": "^18.3.1",
     "react-custom-roulette": "^1.4.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "ui": "shadcn/ui"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 import DiceGame from './components/DiceGame'
@@ -8,7 +7,7 @@ function App() {
     return (
     <>
       <div className='App'>
-        <Roulette/>     
+        <DiceGame/>     
       </div>   
     </>
   )

@@ -20,3 +20,63 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.prize-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.prize-message h3 {
+  margin-top: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  width: 300px;
+}
+
+.modal-content h3 {
+  color: #2ecc71;
+  margin-top: 0;
+}
+
+.modal-content h2 {
+  color: #3498db;
+  margin: 20px 0;
+}
+
+.modal-content button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #c0392b;
+}

@@ -1,5 +1,4 @@
-// src/Roulette.jsx
-import React, { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import '../style/Roulette.css';
 
@@ -14,13 +13,24 @@ const data = [
 export default function Roulette() {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSpin = () => {
     setMustSpin(true);
-    setPrizeNumber(Math.floor(Math.random() * data.length)); // Número aleatorio entre 0 y 4
-    setTimeout(() => {
-      setMustSpin(false);
-    }, 4000); // Simula el tiempo de giro
+    setPrizeNumber(Math.floor(Math.random() * data.length));
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    if (!mustSpin && prizeNumber !== null) {
+      setTimeout(() => {
+        setShowModal(true);
+      }, 1000); // Espera 1 segundo después de que la ruleta se detiene para mostrar el modal
+    }
+  }, [mustSpin, prizeNumber]);
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -31,6 +41,9 @@ export default function Roulette() {
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
           data={data}
+          onStopSpinning={() => {
+            setMustSpin(false);
+          }}
           backgroundColors={['#3e3e3e', '#df3428']}
           textColors={['#ffffff']}
         />
@@ -38,7 +51,16 @@ export default function Roulette() {
       <button onClick={handleSpin} disabled={mustSpin}>
         {mustSpin ? 'Girando...' : 'Girar'}
       </button>
-      {prizeNumber !== null && <p>¡La ruleta cayó en: {data[prizeNumber].option}!</p>}
+      {showModal && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>¡Felicidades!</h3>
+            <p>Has ganado:</p>
+            <h2>{data[prizeNumber].option}</h2>
+            <button onClick={closeModal}>Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

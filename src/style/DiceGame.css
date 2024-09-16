@@ -1,0 +1,25 @@
+.dice-game {
+    text-align: center;
+    margin: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .dice {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    font-size: 24px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

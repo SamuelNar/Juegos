@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px 0px; 
+  grid-template-areas: 
+    "lista-dados lista-dados"
+    "boton-girar boton-girar"; 
+}
+
+.lista-dados { 
+  grid-area: lista-dados; 
+}
+
+.lista-dados > img{
+  padding: 20px;
+}
+
+.boton-girar { 
+  grid-area: boton-girar; 
+}
+
+.boton-girar > button {
+  font-size: 20px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotate {
+	animation: rotate 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+

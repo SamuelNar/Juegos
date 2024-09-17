@@ -10,14 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "juegos": "file:",
     "react": "^18.3.1",
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^18.3.1",
-    "ui": "shadcn/ui"
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@shadcn/ui": "^0.0.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",

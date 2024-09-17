@@ -1,13 +1,11 @@
 import './App.css'
-
-import DiceGame from './components/DiceGame'
+import Dado from './components/Dado'
 import Roulette from './components/Roulette'
-
 function App() {
     return (
     <>
       <div className='App'>
-        <DiceGame/>     
+        <Dado />
       </div>   
     </>
   )

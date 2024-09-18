@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.lista-dados {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.lista-dados img {
+  width: 100px; /* Ajusta el tamaño de los dados */
+  height: 100px;
+  margin: 0 10px;
+  transition: transform 0.5s; /* Animación para el giro */
+}
+
+.rotate {
+  transform: rotate(360deg); /* Efecto de rotación */
+}
+
+.boton-girar {
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s, transform 0.5s, background-color 0.5s; /* Añadida transición de color de fondo */
+  transform: translateY(-20px);
+  opacity: 0;
+  color: #000; /* Color predeterminado del texto */
+  padding: 10px 20px; /* Añadido padding para más espacio */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadido un leve sombreado */
+  width: 320px; /* Ancho ligeramente aumentado */
+  height: auto; /* Altura automática */
+  margin: 10px 0; /* Margen vertical para espaciar */
+}
+
+.message.show {
+  transform: translateY(0);
+  opacity: 1;
+  color: #000;
+}
+
+.message.win {
+  color: #008000; /* Verde cuando se gana */
+  background-color: rgba(0, 138, 53, 0.2); /* Fondo verde claro y transparente */
+  border: 2px solid #008000; /* Borde verde */
+}
+
+.message.lose {
+  color: #FF0000; /* Rojo cuando se pierde */
+  background-color: rgba(255, 6, 6, 0.2); /* Fondo rojo claro y transparente */
+  border: 2px solid #FF0000; /* Borde rojo */
+}
+
+/* Agregamos una animación suave al aparecer */
+.message.show {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
